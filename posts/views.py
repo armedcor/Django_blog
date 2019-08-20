@@ -36,7 +36,7 @@ def create_or_edit_post(request, pk=None):
     """
 
     post = get_object_or_404(Post, pk=pk) if pk else None
-    if request.method === "POST":
+    if request.method == "POST":
         form = BlogPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
